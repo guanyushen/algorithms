@@ -6,4 +6,8 @@ package com.study.easy;
  */
 
 public class test {
+    static{
+        System.out.println("test");
+    }
+
 }
