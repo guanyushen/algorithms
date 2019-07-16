@@ -56,6 +56,34 @@ public class RomanNumber {
         return sum;
     }
 
+    /**
+     * 更优解，运行效率更高
+     * @param s
+     * @return
+     */
+    public static int newRomanToInt(String s){
+        HashMap<Character,Integer> map=new HashMap<>();
+        map.put('I',1);
+        map.put('V',5);
+        map.put('X',10);
+        map.put('L',50);
+        map.put('C',100);
+        map.put('D',500);
+        map.put('M',1000);
+        int l=s.length()-1;
+        int r=map.get(s.charAt(l));
+        for(int i=l;i>0;i--){
+            int a=map.get(s.charAt(i));
+            int b=map.get(s.charAt(i-1));
+            if(a<=b)
+                r+=b;
+            else{
+                r-=b;
+            }
+        }
+        return r;
+    }
+
     public static void main(String[] args) {
 
         String s= "LVIII";
