@@ -25,9 +25,8 @@ public class MargeLink {
     }
 
     public static void printLink(ListNode l1){
-        while (l1.val != 0){
-            System.out.println(l1.val);
-            if(l1.next != null)
+        System.out.println(l1.val);
+        if (l1.next != null){
             printLink(l1.next);
         }
     }
@@ -47,15 +46,20 @@ public class MargeLink {
         }
     }
 
+
     public static void main(String[] args) {
 
         ListNode l1 = new ListNode(1);
-        l1.push(new ListNode(2));
-        l1.push(new ListNode(4));
-        ListNode l2 = new ListNode(1);
-        l2.push(new ListNode(3));
-        l2.push(new ListNode(4));
-        ListNode  result=mergeTwoLists(l1, l2);
+        ListNode l2 = new ListNode(2);
+        ListNode l3 = new ListNode(4);
+        l1.push(l2);
+        l2.push(l3);
+        ListNode l4 = new ListNode(1);
+        ListNode l5 = new ListNode(3);
+        ListNode l6 = new ListNode(4);
+        l4.push(l5);
+        l5.push(l6);
+        ListNode  result=mergeTwoLists(l1, l4);
         printLink(result);
     }
 }
