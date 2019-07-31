@@ -11,6 +11,7 @@ package main.java.com.study.easy;
 
 public class PowerToTwo {
 
+
     public static boolean isPowerOfTwo(int n) {
         if(n==1) return true;
         while(n%2 == 0 && n != 0){
