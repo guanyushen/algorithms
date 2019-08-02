@@ -24,9 +24,9 @@ public class SingleLinkedList {
     }
 
     //检测单链表是否成环
-    public static boolean isCircle(Node list){
+    public static boolean isCycle(Node list){
         if(list == null) return false;
-        Node fast = list.next;
+        Node fast = list;
         Node slow = list;
         while (fast != null && fast.next != null){
             fast = fast.next.next;
@@ -49,6 +49,39 @@ public class SingleLinkedList {
             l2.next = MargeTwoLink(l1,l2.next);
             return l2;
         }
+    }
+
+    //删除链表中倒数第K个节点,返回头结点
+    public static Node deleteNodeK(Node list,int k){
+
+        Node virtual = new Node(0,list);
+        Node fast = virtual;
+        Node slow = virtual;
+        while (fast != null && k>0){
+            fast = fast.next;
+            k--;
+        }
+        if(fast == null) return list;
+        while (fast.next != null){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
+        return virtual.next;
+
+    }
+
+    //找到链表中间的点
+    public Node middleNode(Node head) {
+        if(head == null) return null;
+        Node fast = head;
+        Node slow = head;
+        while(fast !=null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        return slow;
     }
 
     public static class Node {
