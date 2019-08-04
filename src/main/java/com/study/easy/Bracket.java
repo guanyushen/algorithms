@@ -3,6 +3,7 @@ package com.study.easy;
 import java.util.Stack;
 
 /**
+ * 题目：判断是不是正确的括号
  * @author guanyushen
  * @date 2019/7/17 20:14
  */
