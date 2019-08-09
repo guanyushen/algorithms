@@ -18,8 +18,8 @@ public class SumBinary {
         int temp = 0;
         for(int i=a.length()-1,j=b.length()-1;i>=0 || j>=0;i--,j--){
             int sum = temp;
-            sum +=a.charAt(i)== '1'?1:0;
-            sum +=b.charAt(j)== '1'?1:0;
+            sum +=i>=0?a.charAt(i)-'0':0;
+            sum +=j>=0?b.charAt(j)-'0':0;
             buffer.append(sum%2);
             temp = sum/2;
         }
