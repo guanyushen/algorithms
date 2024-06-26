@@ -1,5 +1,7 @@
 package com.study.easy;
 
+import com.study.base.TreeNode;
+
 /**
  * 题目:二叉树的最大深度
  * 给定一个二叉树，找出其最大深度。
@@ -11,18 +13,12 @@ package com.study.easy;
 
 public class MaxDepthTree {
 
-    public class TreeNode {
-       int val;
-       TreeNode left;
-       TreeNode right;
-       TreeNode(int x) { val = x; }
-   }
 
     public int maxDepth(TreeNode root) {
         int i = 1;
         if(root == null){return 0;}else {
-            int left = maxDepth(root.left);
-            int right = maxDepth(root.right);
+            int left = maxDepth(root.getLeft());
+            int right = maxDepth(root.getRight());
             return java.lang.Math.max(left, right)+1;
         }
 
